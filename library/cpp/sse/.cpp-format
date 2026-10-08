@@ -1,0 +1,5 @@
+Inherit: Parent
+# AltiVec uses this spelling as a type annotation in the PowerPC headers.
+MacroCategories:
+  DeclarationModifierMacros:
+    - vector

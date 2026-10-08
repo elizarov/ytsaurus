@@ -1,0 +1,187 @@
+---
+ColumnLimit: 120
+IndentWidth: 4
+TabWidth: 4
+
+BuilderChains:
+  YqlExpressions:
+    EntryCalls:
+      - Builder
+      - TExprNodeBuilder
+      - NYql::TExprNodeBuilder
+      - List
+      - Callable
+      - Lambda
+      - Apply
+      - ApplyPartial
+    Scopes:
+      - Open: List
+        Close: Seal
+      - Open: Callable
+        Close: Seal
+      - Open: Lambda
+        Close: Seal
+      - Open: Apply
+        Close: Seal
+      - Open: ApplyPartial
+        Close: Seal
+  Yson:
+    EntryCalls:
+      - BuildYsonFluently
+      - BuildYsonStringFluently
+      - BuildYsonNodeFluently
+      - BuildYsonMapFragmentFluently
+      - BuildYsonListFragmentFluently
+      - BuildYsonAttributesFluently
+      - BuildAttributeDictionaryFluently
+      - NYTree::BuildYsonFluently
+      - NYTree::BuildYsonNodeFluently
+      - NYTree::BuildYsonStringFluently
+      - NYTree::BuildAttributeDictionaryFluently
+      - NYTree::BuildYsonMapFragmentFluently
+      - NYTree::BuildYsonListFragmentFluently
+      - NYT::NYTree::BuildYsonNodeFluently
+      - NYT::NYTree::BuildYsonFluently
+      - NYT::NYTree::BuildYsonStringFluently
+      - NYT::NYTree::BuildYsonListFragmentFluently
+      - NYT::BuildYsonNodeFluently
+      - NYT::BuildYsonStringFluently
+      - BeginMap
+      - BeginList
+      - BeginAttributes
+      - Item
+    Scopes:
+      - Open: BeginMap
+        Close: EndMap
+      - Open: BeginList
+        Close: EndList
+      - Open: BeginAttributes
+        Close: EndAttributes
+    BindToNext:
+      - Item
+
+MacroCategories:
+  ClassBeginMacros:
+    - BEGIN_DEFINE_SCALAR_TYPE
+    - YQL_ACTION
+  ClassEndMacros:
+    - END_DEFINE_SCALAR_TYPE
+  ExpressionPrefixMacros:
+    - ythrow
+    - THROW_ERROR
+    - ITERATE_JOB_RESOURCES
+    - ITERATE_JOB_RESOURCE_FIELDS
+    - ITERATE_NODE_RESOURCES
+    - FOR_EACH_CHUNK_MERGER_CRITERIA_FIELD
+    - Y_MAP_ARGS
+  ExpressionContinuationMacros:
+    - ITERATE_JOB_RESOURCE_FIELDS
+    - ITERATE_NODE_RESOURCES
+    - ITERATE_JOB_RESOURCES
+    - FOR_EACH_CHUNK_MERGER_CRITERIA_FIELD
+    - FOR_EACH_INHERITABLE_ATTRIBUTE
+    - ITERATE_TABLET_PERFORMANCE_COUNTERS
+    - ITERATE_NODE_TABLET_PERFORMANCE_COUNTERS
+  DeclarationModifierMacros:
+    - MOODYCAMEL_NO_TSAN
+    - MOODYCAMEL_MAYBE_UNUSED
+    - MOODYCAMEL_THREADLOCAL
+    - PERTHREAD
+    - WINAPI
+    - _In_
+    - PIRE_HOT_FUNCTION
+    - PIRE_FORCED_INLINE
+    - WASM_WEAK
+    - YT_PREVENT_TLS_CACHING
+    - _stdcall
+    - Y_LIFETIME_BOUND
+    - __vector
+    - REF_COUNTED_TRACKER_NO_TSAN
+    - Y_FORCE_INLINE
+    - Y_HIDDEN
+    - Y_NO_INLINE
+    - Y_NO_SANITIZE
+    - Y_PRINTF_FORMAT
+    - Y_PUBLIC
+    - Y_PURE_FUNCTION
+    - Y_WARN_UNUSED_RESULT
+  IfHeaderMacros:
+    - MOODYCAMEL_CONSTEXPR_IF
+  StatementPrefixMacros:
+    - MOODYCAMEL_TRY
+    - PY_TRY
+    - COLD_BLOCK_BYREF
+    - Y_DEFER
+    - THROW
+    - YQL_LOG_CTX_THROW
+    - Y_PROTOBUF_SUPPRESS_NODISCARD
+    - COLD_BLOCK_BYVALUE
+    - COLD_BLOCK
+  MethodDeclarationMacros:
+    - MOCK_METHOD
+  PreprocessorArgumentMacros:
+    - SIMPLE_MODULE
+    - XX
+    - CASE_REPEATED_DEFAULT
+    - CASE_ADD_DEFAULT
+    - HANDLE_RPC_CALL
+    - DELEGATE_METHOD
+    - DELEGATE_TIMESTAMPED_METHOD
+    - DELEGATE_TRANSACTIONAL_METHOD
+    - IMPLEMENT_METHOD
+    - IMPLEMENT_OVERLOADED_METHOD
+    - METHOD_ARITY
+    - UNIMPLEMENTED_METHOD
+    - DECLARE_SUPPORTS_METHOD
+    - DISPATCH_YPATH_SERVICE_METHOD
+    - YQL_ENSURE
+    - HANDLE_OPT
+    - CASE_SCALAR_DEFAULT
+    - Y_STRINGIZE
+    - PP_STRINGIZE
+    - TEST_CHAR_AT
+    - DEFINE_RPC_PROXY*
+    - PHOENIX_REGISTER_FIELD
+    - PHOENIX_REGISTER_DELETED_FIELD
+    - DECLARE_CPPTYPE_DEFAULT
+  TypeSpecifierMacros:
+    - PSUF_LOCAL
+    - STACK_OF
+  NamespaceMacros:
+    - Y_UNIT_TEST_SUITE
+    - Y_UNIT_TEST_SUITE_F
+  StatementArgumentMacros:
+    - EXPECT_THROW*
+    - EXPECT_NO_THROW
+    - EXPECT_ANY_THROW
+    - ASSERT_THROW*
+    - ASSERT_NO_THROW
+    - ASSERT_ANY_THROW
+    - PIRE_IFDEBUG
+    - Y_IF_DEBUG
+  ItemSuffixMacros:
+    - Y_SEMICOLON_GUARD
+  ItemMacros:
+    - ITERATE_JOB_RESOURCES
+    - ITERATE_JOB_RESOURCE_FIELDS
+    - ITERATE_NODE_RESOURCES
+    - FOR_EACH_CHUNK_MERGER_CRITERIA_FIELD
+    - Y_MAP_ARGS
+    - FOR_EACH_INHERITABLE_ATTRIBUTE
+    - ITERATION
+    - _PyObject_EXTRA_INIT
+    - MSAN_TLS_STUBS
+    - ITERATE_TABLET_PERFORMANCE_COUNTERS
+    - ITERATE_NODE_TABLET_PERFORMANCE_COUNTERS
+    - XX
+    - macro
+    - ENSURE_NOT_DELETED
+    - ENSURE_NOT_FROZEN*
+    - PYCXX_ADD_DRIVER_METHODS
+    - PyVarObject_HEAD_INIT
+    - PY_CATCH
+    - COLD_BLOCK_END
+    - YSON_STRUCT_IMPL__CTOR_BODY
+    - Y_PRAGMA_DIAGNOSTIC_PUSH
+    - Y_PRAGMA_DIAGNOSTIC_POP
+    - Y_PRAGMA_NO_*

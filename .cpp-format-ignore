@@ -1,0 +1,21 @@
+.git
+build
+contrib
+vendor
+# PostgreSQL sources copied by the YQL wrapper.
+yql/essentials/parser/pg_wrapper/postgresql
+# Deliberately invalid parser fixture.
+tools/enum_parser/parse_enum/ut/unbalanced.h
+# Inactive MSVC benchmark branch contains an unmatched parenthesis.
+library/cpp/threading/light_rw_lock/bench/lightrwlock_test.cpp
+# Inactive fallback without HAVE_LONG_LONG lacks an assignment semicolon.
+yql/essentials/udfs/common/python/bindings/py_number_ut.cpp
+# Generated statement and initializer fragments, not standalone headers.
+library/cpp/type_info/tz/is_valid_gen.h
+library/cpp/type_info/tz/tz_gen.h
+yql/essentials/parser/pg_catalog/columns.generated.h
+yql/essentials/parser/pg_catalog/pg_class.generated.h
+yql/essentials/parser/pg_catalog/pg_collation_icu.generated.h
+yql/essentials/parser/pg_catalog/postgis_procs.h
+yql/essentials/parser/pg_catalog/safe_procs.h
+yql/essentials/parser/pg_catalog/used_procs.h
